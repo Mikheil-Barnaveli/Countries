@@ -1,0 +1,41 @@
+#card-div{
+    width: 20rem;
+    height: 30rem;
+    background-color: white;
+    margin-block: 1rem;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#flag-div{
+    width: 100%;
+    height: 45%;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Flag_of_Georgia.svg/255px-Flag_of_Georgia.svg.png);   /*<<<<country api*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#info-div{
+    width: 100%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+#country-name{
+    font-size: 1.5rem;
+}
+#detail-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+}
+.detail-info{
+    font-size: 1rem;
+    font-weight: 300;
+}

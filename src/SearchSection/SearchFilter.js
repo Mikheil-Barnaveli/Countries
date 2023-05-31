@@ -1,11 +1,12 @@
 import React from 'react'
 import Search from './Search'
+import Filter from './Filter'
 
 function SearchFilter() {
   return (
-    <section style={{width:'100%', height:"15dvh", backgroundColor:"green", display:"flex", alignItems:"center", justifyContent:"space-between", flexWrap:"wrap", padding:"2rem"}}>
+    <section style={{width:'100%', height:"20dvh", backgroundColor:"#F2F2F2", display:"flex", alignItems:"center", justifyContent:"space-between", flexWrap:"wrap", padding:"2rem", gap:"1rem"}}>
       <Search/>
-      <button style={{width:"15rem", height:"5dvh"}}></button>
+      <Filter/>
     </section>
   )
 }
