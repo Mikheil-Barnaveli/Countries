@@ -1,0 +1,7 @@
+#info-flag-div{
+    max-width: 40rem;
+    min-width: 320px;
+    min-height: 275px;
+    max-height: 30rem;
+    background-color: red;
+}

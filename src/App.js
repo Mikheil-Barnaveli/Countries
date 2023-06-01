@@ -2,23 +2,15 @@ import './App.css';
 import Header from './Header/Header';
 import SearchFilter from './SearchSection/SearchFilter';
 import Main from './Main/Main';
+import Country from './CountryPage/Country';
 
 function App() {
   return (
     <>
-    <Header/>
+    {/* <Header/>
     <SearchFilter/>
-    <Main/>
-    {/* <div style={{width:"100%", backgroundColor:"red", minHeight:"70dvh", display:"flex", alignItems:"center", justifyContent:"center", flexWrap:"wrap", gap:"2rem"}}>
-      <div style={{width:"20rem", height:'30rem', backgroundColor:"black", marginBlock:"1rem", color:"white"}}>CARD</div>
-      <div style={{width:"20rem", height:'30rem', backgroundColor:"black", marginBlock:"1rem", color:"white"}}>CARD</div>
-      <div style={{width:"20rem", height:'30rem', backgroundColor:"black", marginBlock:"1rem", color:"white"}}>CARD</div>
-      <div style={{width:"20rem", height:'30rem', backgroundColor:"black", marginBlock:"1rem", color:"white"}}>CARD</div>
-      <div style={{width:"20rem", height:'30rem', backgroundColor:"black", marginBlock:"1rem", color:"white"}}>CARD</div>
-      <div style={{width:"20rem", height:'30rem', backgroundColor:"black", marginBlock:"1rem", color:"white"}}>CARD</div>
-      <div style={{width:"20rem", height:'30rem', backgroundColor:"black", marginBlock:"1rem", color:"white"}}>CARD</div>
-      <div style={{width:"20rem", height:'30rem', backgroundColor:"black", marginBlock:"1rem", color:"white"}}>CARD</div>
-    </div> */}
+    <Main/> */}
+    <Country/>
     </>
   );
 }
