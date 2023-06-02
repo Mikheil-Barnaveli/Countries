@@ -7,7 +7,9 @@ export default function CardTemplate(props) {
   return (
     <>
     <div id='card-div'>
-    <div id='flag-div' style={{backgroundImage: `url(${props.flag})`}}></div>
+    <div id='flag-div'>
+      <img src={props.flag} style={{width:'100%', height:'100%'}}></img>
+    </div>
     <div id='info-div'>
         <h1 id='country-name'>{props.countryName}</h1>
         <div id='detail-info'>
