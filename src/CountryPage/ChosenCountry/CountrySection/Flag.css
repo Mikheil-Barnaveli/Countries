@@ -1,7 +1,9 @@
 #info-flag-div{
-    max-width: 40rem;
-    min-width: 320px;
-    min-height: 275px;
-    max-height: 30rem;
-    background-color: red;
+    width: 30rem;
+    min-height: 13rem;
+    min-width: 20rem;
+    max-height: 18rem;
+    height: 15rem;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

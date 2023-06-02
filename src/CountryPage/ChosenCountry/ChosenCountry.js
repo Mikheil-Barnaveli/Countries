@@ -1,9 +1,9 @@
 import React from 'react'
 import ChosenCountryTemplate from './ChosenCountryTemplate'
 
-function ChosenCountry() {
+function ChosenCountry(props) {
   return (
-    <ChosenCountryTemplate/>
+    <ChosenCountryTemplate {...props}/>
   )
 }
 

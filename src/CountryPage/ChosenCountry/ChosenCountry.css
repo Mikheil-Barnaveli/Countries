@@ -1,7 +1,7 @@
 #chosen-country-div{
     width: 100%;
-    height: 75dvh;
-    padding: 2rem;
+    height: 80dvh;
+    padding-inline: 2rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -10,12 +10,14 @@
     background-color: #F2F2F2;
 }
 #detailed-info-about-countries-div{
-    max-width: 37rem;
-    min-width: 320px;
-    min-height: 275px;
-    max-height: 50dvh;
+    width: 30rem;
+    height: auto;
+    min-width: 20rem;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
 }

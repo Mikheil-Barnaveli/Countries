@@ -1,9 +1,9 @@
 import React from 'react'
 import BorderCountriesTemplate from './BorderCountriesTemplate'
 
-function BorderCountries() {
+function BorderCountries(props) {
   return (
-    <BorderCountriesTemplate/>
+    <BorderCountriesTemplate {...props}/>
   )
 }
 

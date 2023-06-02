@@ -5,14 +5,14 @@ import InfoAboutCountry from './CountrySection/InformationSection/InfoAboutCount
 import BorderCountries from './CountrySection/InformationSection/BorderCountries'
 import './ChosenCountry.css'
 
-function ChosenCountryTemplate() {
+function ChosenCountryTemplate(props) {
   return (
     <div id='chosen-country-div'>
-    <Flag/>
+    <Flag {...props}/>
     <div id='detailed-info-about-countries-div'>
-    <NameOfCountry/>
-    <InfoAboutCountry/>
-    <BorderCountries/>
+    <NameOfCountry {...props}/>
+    <InfoAboutCountry {...props}/>
+    <BorderCountries {...props}/>
     </div>
     </div>
   )

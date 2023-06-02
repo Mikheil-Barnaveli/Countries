@@ -1,6 +1,8 @@
 #go-back-btn-div{
     width: 100%;
-    height: 15dvh;
+    max-height: 15dvh;
+    min-height: 10dvh;
+    height: 10dvh;
     display: flex;
     align-items: center;
     justify-content: flex-start;

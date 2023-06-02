@@ -1,10 +1,11 @@
 import React from 'react'
+import './BorderCountries.css'
 
 function BorderCountriesTemplate(props) {
   return (
-    <div>
-        <h2>Border Countries:</h2>
-        <button onClick={props.BorderCountriesBtn}>{props.CountryName}</button>
+    <div id='border-countries-div'>
+        <h2>Border Countries:<div id='border-props-div'>{props.borders}</div></h2>
+        
     </div>
   )
 }

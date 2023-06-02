@@ -2,7 +2,7 @@ import React from 'react'
 
 function NameOfCountry(props) {
   return (
-    <div>Name Of Country: {props.CountryName}</div>
+    <div style={{fontWeight:"800", fontSize:"2rem"}}>{props.countryName}</div>
   )
 }
 

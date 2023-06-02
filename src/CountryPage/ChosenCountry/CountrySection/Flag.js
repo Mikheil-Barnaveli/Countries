@@ -1,9 +1,9 @@
 import React from 'react'
 import './Flag.css'
 
-function Flag() {
+function Flag(props) {
   return (
-    <div id='info-flag-div'>Flag</div>
+    <div id='info-flag-div' style={{backgroundImage:`url(${props.flag})`}}></div>
   )
 }
 

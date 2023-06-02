@@ -1,9 +1,9 @@
 import React from 'react'
 import InfoAboutCountryTemplate from './InfoAboutCountryTemplate'
 
-function InfoAboutCountry() {
+function InfoAboutCountry(props) {
   return (
-    <InfoAboutCountryTemplate/>
+    <InfoAboutCountryTemplate {...props}/>
   )
 }
 

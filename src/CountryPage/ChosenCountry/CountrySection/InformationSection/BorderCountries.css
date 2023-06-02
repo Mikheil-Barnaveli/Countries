@@ -1,0 +1,11 @@
+#border-props-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    
+}
+#border-countries-div{
+    background-color: #F2F2F2
+}
