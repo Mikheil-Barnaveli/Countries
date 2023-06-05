@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Header from "../Header/Header";
 import GoBack from "./GoBack/GoBack";
 import ChosenCountry from "./ChosenCountry/ChosenCountry";
-import { useNavigate, useParams } from 'react-router-dom'
+import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { MyContext } from '../context/my-context';
 
 function Country(props) {
@@ -19,7 +19,7 @@ function Country(props) {
     console.log(props.data, "es aris propsi");
 
     const element = props.data.find((el)=>{
-        return el.name.common === params.country 
+        return el.cca3 === params.country 
     })
 
     console.log(element, "es aris elementi");
@@ -54,8 +54,8 @@ function Country(props) {
             }
             borders={
               element?.borders
-                ? Object.values(element.borders).map((lang) => (
-                    <button
+                ? Object.values(element.borders).map((lang, index) => (
+                    <button key={index}
                       style={{
                         background: "none",
                         boxshadow: "0px 0px 4px 1px rgba(0, 0, 0, 0.104931)",
@@ -63,6 +63,7 @@ function Country(props) {
                         padding:"2px",
                         textAlign:"center"
                       }}
+                      onClick={() => navigate(`/${lang}`)}
                     >
                       {lang}
                     </button>

@@ -20,7 +20,7 @@ function Main(props) {
             checkname = {function checkname() {
               console.log(el.name.common)
             } }
-            navigateIT = {() => navigate(`/${el.name.common}`)}
+            navigateIT = {() => navigate(`/${el.cca3}`)}
           />
         );
       })}
