@@ -7,7 +7,7 @@ function MainPage(props) {
   return (
     <>
     <Header/>
-    <SearchFilter/>
+    <SearchFilter data = {props.data}/>
     <Main data = {props.data}/>
     </>
   )

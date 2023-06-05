@@ -1,8 +1,8 @@
 import React from 'react'
 import SearchTemplate from './SearchTemplate'
-function Search() {
+function Search(props) {
   return (
-    <SearchTemplate/>
+    <SearchTemplate data = {props.data}/>
   )
 }
 
