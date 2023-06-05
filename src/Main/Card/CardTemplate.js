@@ -3,11 +3,14 @@ import './Card.css'
 
 export default function CardTemplate(props) {
 
+  // function checkname() {
+  //   console.log(props.countryName);
+  // }
 
   return (
     <>
-    <div id='card-div'>
-    <div id='flag-div'>
+    <div id='card-div' onClick={props.navigateIT}>
+    <div id='flag-div' onClick={props.checkname}>
       <img src={props.flag} style={{width:'100%', height:'100%'}}></img>
     </div>
     <div id='info-div'>

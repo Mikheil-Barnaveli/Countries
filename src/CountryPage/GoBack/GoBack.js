@@ -1,9 +1,9 @@
 import React from 'react'
 import GoBackTemplate from './GoBackTemplate'
 
-function GoBack() {
+function GoBack(props) {
   return (
-    <GoBackTemplate/>
+    <GoBackTemplate goBack={props.goBack}/>
   )
 }
 

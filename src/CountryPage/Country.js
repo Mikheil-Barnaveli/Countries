@@ -1,44 +1,60 @@
-import React from "react";
+import React, { useContext } from "react";
 import Header from "../Header/Header";
 import GoBack from "./GoBack/GoBack";
 import ChosenCountry from "./ChosenCountry/ChosenCountry";
+import { useNavigate, useParams } from 'react-router-dom'
+import { MyContext } from '../context/my-context';
 
 function Country(props) {
-  const values = Object.values(props.data[21].name.nativeName)[0].official;
-  console.log(values);
+  // const values = Object.values(props.data[21].name.nativeName)[0].official;
+  // console.log(values);
+
+  const params =useParams()
+  let navigate = useNavigate()
+
+
+  console.log(params, "es aris paramsi");
+
+    
+    console.log(props.data, "es aris propsi");
+
+    const element = props.data.find((el)=>{
+        return el.name.common === params.country 
+    })
+
+    console.log(element, "es aris elementi");
+
   return (
     <>
       <Header />
-      <GoBack />
-      {props.data.map((el, key) => {
-        return (
+      <GoBack goBack = {() => navigate('/')}/>
           <ChosenCountry
-            key={el.name.common}
-            countryName={el.name.common}
-            flag={el.flags.png}
-            population={el.population}
-            region={el.region}
-            capital={el.capital}
-            subRegion={el.subregion}
-            topLevelDomain={el.tld}
+            key={element.name.common}
+            countryName={element.name.common}
+            flag={element.flags.png}
+            population={element.population}
+            region={element.region}
+            capital={element.capital}
+            subRegion={element.subregion}
+            topLevelDomain={element.tld}
             currencies={
-              el?.currencies
-                ? Object.values(el.currencies)[0].name
+              element?.currencies
+                ? Object.values(element.currencies)[0].name
                 : "Not Available"
             }
             languages={
-              el?.languages
-                ? Object.values(el.languages).map((lang) => `${lang} `)
+              element?.languages
+                ? Object.values(element.languages).map((lang) => `${lang} `)
                 : "Not Available"
             }
             nativeName={
-              el?.currencies
-                ? Object.values(el.name.nativeName)[0].official
+              element?.currencies
+                ? Object.values(element.name.nativeName)[0].official
                 : "Not Available"
             }
             borders={
-              el?.borders
-                ? Object.values(el.borders).map((lang) => (
+              element?.borders
+                ? Object.values(element.borders).map((lang) => (
                     <button
                       style={{
                         background: "none",
@@ -54,8 +70,7 @@ function Country(props) {
                 : <span style={{fontWeight:'300', fontSize:'1rem'}}>Not Available</span>
             }
           />
-        );
-      })}
+      
     </>
   );
 }
