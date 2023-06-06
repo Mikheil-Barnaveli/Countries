@@ -32,9 +32,17 @@ function SearchTemplate(props) {
 
     navigate(`/${findCCA3}`)
   }
+
+  function handleKeyUp(event) {
+    if (event.key === 'Enter') {
+      handleSearchClick()
+    }
+  }
+
+
   return (
     <div id='search-div'>
-    <input type='text' id='search-input' placeholder='Search for a country...' value={inputValue} onChange={handleInputChange}></input>
+    <input type='text' id='search-input' placeholder='Search for a country...' value={inputValue} onChange={handleInputChange} onKeyUp={handleKeyUp}></input>
     <button id='search-btn' onClick={handleSearchClick}>
         <img src={searchIcon} alt='search'></img>
     </button>

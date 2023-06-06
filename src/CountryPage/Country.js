@@ -27,7 +27,7 @@ function Country(props) {
   return (
     <>
       <Header />
-      <GoBack goBack = {() => navigate('/')}/>
+      <GoBack goBack = {() => navigate('/Countries')}/>
           <ChosenCountry
             key={element.name.common}
             countryName={element.name.common}

@@ -31,8 +31,8 @@ function App() {
 
   return (
     <>
-      <Routes path='/' element = {<MainPage data={someInfoFromApi}/>}>
-        <Route exact path="/" index element={<MainPage data={someInfoFromApi}/>} />
+      <Routes path='/Countries' element = {<MainPage data={someInfoFromApi}/>}>
+        <Route exact path="/Countries" index element={<MainPage data={someInfoFromApi}/>} />
         <Route path="/:country" element={<Country data={someInfoFromApi}/>} />
       </Routes>
     
