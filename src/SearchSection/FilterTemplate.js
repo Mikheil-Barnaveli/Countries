@@ -1,22 +1,23 @@
 import React from "react";
 import "./Filter.css";
 
-function FilterTemplate() {
-
-  const gapStyle = {
-    backgroundColor: 'white',
-    height: '1px',
-    padding: '0',
-    margin: '5px 0',
-  };
-
+function FilterTemplate(props) {
+  
+  // const onOptionChangeHandler = (event) => {
+  //       console.log("User Selected Value - ", event.target.value)
+  //   }
 
   return (
     <div id="filter-div">
-      <select id="filter-select" defaultValue={"Filter by region"}>
-      <option value="filter" disabled hidden>Filter by region</option>
+      <select
+        id="filter-select"
+        defaultValue={"filter"}
+        style={{ backgroundColor: props.FilterBGColor, color:props.FilterColor}}
+        onChange={props.onOptionChangeHandler}
+      >
+        <option value={"all"}>Filter by region</option>
         <option value={"Africa"}>Africa</option>
-        <option value={"America"}>America</option>
+        <option value={"Americas"}>Americas</option>
         <option value={"Asia"}>Asia</option>
         <option value={"Europe"}>Europe</option>
         <option value={"Oceania"}>Oceania</option>

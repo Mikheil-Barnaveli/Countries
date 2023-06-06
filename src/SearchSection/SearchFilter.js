@@ -22,7 +22,11 @@ function SearchFilter(props) {
         searchBGColor={props.searchBGColor}
         searchColor={props.searchColor}
       />
-      <Filter />
+      <Filter
+        FilterBGColor={props.FilterBGColor}
+        FilterColor={props.FilterColor}
+        onOptionChangeHandler={props.onOptionChangeHandler}
+      />
     </section>
   );
 }

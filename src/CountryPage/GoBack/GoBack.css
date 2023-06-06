@@ -7,13 +7,14 @@
     align-items: center;
     justify-content: flex-start;
     padding: 2rem;
-    background-color: #F2F2F2;
 }
 #go-back-btn{
-    height: 3dvh;
-    width: 4rem;
-    background: #FFFFFF;
+    height: 4dvh;
+    width: 6rem;
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.293139);
     border-radius: 2px;
     border: none;
+    background: none;
+    text-align: center;
+    padding: 0.5rem;
     }

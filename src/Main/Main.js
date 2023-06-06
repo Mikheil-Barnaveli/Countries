@@ -8,7 +8,13 @@ function Main(props) {
   
   return (
     <div id="main-div" style={{backgroundColor:props.mainBGColor}}> 
-      {props.data.map((el, key) => {
+      {props.data.filter(data => {
+  if (props.selectedRegion !== "all") {
+    return data.region === props.selectedRegion;
+  } else {
+    return true;
+  }
+}).map((el, key) => {
         return (
           <Card
             key={el.name.common}

@@ -7,7 +7,7 @@ import './ChosenCountry.css'
 
 function ChosenCountryTemplate(props) {
   return (
-    <div id='chosen-country-div'>
+    <div id='chosen-country-div' style={{backgroundColor:props.ChosenCountryBGC}}>
     <Flag {...props}/>
     <div id='detailed-info-about-countries-div'>
     <NameOfCountry {...props}/>

@@ -1,10 +1,14 @@
-import React from 'react'
-import FilterTemplate from './FilterTemplate'
+import React from "react";
+import FilterTemplate from "./FilterTemplate";
 
-function Filter() {
+function Filter(props) {
   return (
-    <FilterTemplate/>
-  )
+    <FilterTemplate
+      FilterBGColor={props.FilterBGColor}
+      FilterColor={props.FilterColor}
+      onOptionChangeHandler={props.onOptionChangeHandler}
+    />
+  );
 }
 
-export default Filter
+export default Filter;

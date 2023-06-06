@@ -3,7 +3,7 @@ import ChosenCountryTemplate from './ChosenCountryTemplate'
 
 function ChosenCountry(props) {
   return (
-    <ChosenCountryTemplate {...props}/>
+    <ChosenCountryTemplate {...props} ChosenCountryBGC={props.ChosenCountryBGC}/>
   )
 }
 

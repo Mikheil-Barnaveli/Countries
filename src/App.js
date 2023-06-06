@@ -1,5 +1,5 @@
 import "./App.css";
-import { Router, Route, Switch, Routes } from "react-router-dom";
+import { Router, Route, Switch, Routes, useNavigate } from "react-router-dom";
 import Header from "./Header/Header";
 import SearchFilter from "./SearchSection/SearchFilter";
 import Main from "./Main/Main";
@@ -16,21 +16,31 @@ function App() {
   const [checkDarkMode, setCheckDarkMode] = useState(false);
   const [infoColor, setInfoColor] = useState("");
   const [mainBGColor, setMainBGColor] = useState("");
+  const [darkLight, setDarkLight] = useState("Dark")
+  const [headerBoxShadow, setHeaderBoxShadow] = useState("0px 2px 4px rgba(0, 0, 0, 0.0562443)")
+  const [selectedOption, setSelectedOption] = useState('all');
+  const [filteredData, setFilteredData] = useState([]);
+  let navigate = useNavigate()
 
   function handleDarkMode() {
-    if (checkDarkMode == false) {
-      setBgColor("white");
-      setInfoColor("black");
-      setMainBGColor("#FEFEFE");
-      setCheckDarkMode(true);
-    } else {
+    let darkMode = !checkDarkMode
+    if (darkMode ) {
       setBgColor("#2B3844");
-      setInfoColor("white");
+      setInfoColor("#FFFFFF");
       setMainBGColor("#202C36");
-      setCheckDarkMode(false);
+      setDarkLight("Light")
+      setHeaderBoxShadow("0px 2px 4px rgba(0, 0, 0, 0.0562443)")
+      setCheckDarkMode(darkMode);
+    } else {
+      setBgColor("#FFFFFF");
+      setInfoColor("#111517");
+      setMainBGColor("#FEFEFE");
+      setDarkLight("Dark")
+      setHeaderBoxShadow("0px 2px 4px rgba(0, 0, 0, 0.0562443)")
+      setCheckDarkMode(darkMode);
     }
   }
-  // const [myData, setData] = useState("");
+
 
   useEffect(() => {
     axios
@@ -43,15 +53,33 @@ function App() {
         console.log(error);
       });
   }, []);
+  
+  
 
   if (someInfoFromApi === "") return <p>Loading...</p>;
+
+  
+  const onOptionChangeHandler = (event) => {
+    console.log("User Selected Value - ", event.target.value)
+    setSelectedOption(event.target.value)
+  }
+
+  function handleLogoClick() {
+    navigate(`/Countries`)
+    setSelectedOption("all")
+    
+  }
+
 
   return (
     <>
       <Header
         darkMode={handleDarkMode}
+        logoClick={handleLogoClick}
         BGColor={bgColor}
         infoColor={infoColor}
+        darklight={darkLight}
+        headerBoxShadow={headerBoxShadow}
       />
       <Routes path="/Countries" element={<MainPage data={someInfoFromApi} />}>
         <Route
@@ -64,13 +92,32 @@ function App() {
               BGcolor={bgColor}
               infoColor={infoColor}
               mainBGColor={mainBGColor}
-              searchBGColor ={bgColor}
+              searchBGColor={bgColor}
               searchColor={infoColor}
               searchMainColor={mainBGColor}
+              FilterBGColor={bgColor}
+              FilterColor={infoColor}
+              onOptionChangeHandler={onOptionChangeHandler}
+              selectedRegion = {selectedOption}
             />
           }
         />
-        <Route path="/:country" element={<Country data={someInfoFromApi} />} />
+        <Route
+          path="/:country"
+          element={
+            <Country
+              data={someInfoFromApi}
+              goBackBGC={mainBGColor}
+              goBackBtnBGC={bgColor}
+              goBackBtnColor={infoColor}
+              CountryInfoColor={infoColor}
+              ChosenCountryBGC={mainBGColor}
+              BorderCountriesBG={mainBGColor}
+              BorderCountriesC={infoColor}
+              borderCountryBtnBGC={bgColor}
+            />
+          }
+        />
       </Routes>
 
       {/* <MainPage data={someInfoFromApi}/> */}
