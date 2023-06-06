@@ -2,9 +2,9 @@ import React from 'react'
 import './Header.css'
 import HeaderTemplate from './HeaderTemplate'
 
-function Header() {
+function Header(props) {
   return (
-    <HeaderTemplate/>
+    <HeaderTemplate darkMode = {props.darkMode} BGColor = {props.BGColor} infoColor={props.infoColor}/>
   )
 }
 

@@ -42,8 +42,8 @@ function SearchTemplate(props) {
 
   return (
     <div id='search-div'>
-    <input type='text' id='search-input' placeholder='Search for a country...' value={inputValue} onChange={handleInputChange} onKeyUp={handleKeyUp}></input>
-    <button id='search-btn' onClick={handleSearchClick}>
+    <input type='text' id='search-input' placeholder='Search for a country...' value={inputValue} onChange={handleInputChange} onKeyUp={handleKeyUp} style={{backgroundColor:props.searchBGColor, color:props.searchColor}}></input>
+    <button id='search-btn' onClick={handleSearchClick} style={{backgroundColor:props.searchBGColor}}>
         <img src={searchIcon} alt='search'></img>
     </button>
     </div>
